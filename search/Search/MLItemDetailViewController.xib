@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLItemDetailViewController">
+            <connections>
+                <outlet property="buyButton" destination="7MV-dA-H0c" id="EcR-4U-FKQ"/>
+                <outlet property="collectionViewPhotoGallery" destination="Cmd-Sh-4Tz" id="j5y-dH-C9a"/>
+                <outlet property="labelPrice" destination="rGC-ei-irI" id="Tcc-vM-JYf"/>
+                <outlet property="labelTitle" destination="EFI-6u-XfM" id="IGd-Ie-25W"/>
+                <outlet property="pageControlGallery" destination="OI5-53-92Q" id="n6e-1e-aKu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMU-Yy-doi">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="EFI-6u-XfM">
+                            <rect key="frame" x="20" y="60" width="280" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Cmd-Sh-4Tz">
+                            <rect key="frame" x="57" y="73" width="206" height="247"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rig-zw-Zzw">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="d8I-co-GtT"/>
+                                <outlet property="delegate" destination="-1" id="gGJ-Mu-1Pv"/>
+                            </connections>
+                        </collectionView>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-53-92Q">
+                            <rect key="frame" x="141" y="288" width="39" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="pageIndicatorTintColor" red="0.0034800282489999999" green="0.1134588997" blue="0.53889266300000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </pageControl>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGC-ei-irI">
+                            <rect key="frame" x="20" y="333" width="273" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-dA-H0c">
+                            <rect key="frame" x="20" y="353" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.057049662889999998" green="0.082783651040000003" blue="0.52873796220000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="DpB-VA-L3d"/>
+                            </constraints>
+                            <state key="normal" title="Comprar">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyButtonPressed:" destination="-1" eventType="touchUpInside" id="Dud-62-eh4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rGC-ei-irI" firstAttribute="top" secondItem="Cmd-Sh-4Tz" secondAttribute="bottom" constant="13" id="0Vv-O0-N57"/>
+                        <constraint firstItem="7MV-dA-H0c" firstAttribute="top" secondItem="rGC-ei-irI" secondAttribute="bottom" constant="20" id="5N2-PB-j3k"/>
+                        <constraint firstAttribute="bottom" secondItem="7MV-dA-H0c" secondAttribute="bottom" constant="155" id="Efu-jK-qkb"/>
+                        <constraint firstItem="OI5-53-92Q" firstAttribute="top" secondItem="Cmd-Sh-4Tz" secondAttribute="bottom" constant="-32" id="FBa-Ma-FLQ"/>
+                        <constraint firstItem="OI5-53-92Q" firstAttribute="leading" secondItem="Cmd-Sh-4Tz" secondAttribute="trailing" constant="-122" id="HV2-gr-76E"/>
+                        <constraint firstItem="EFI-6u-XfM" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="20" id="KoS-rz-eiu"/>
+                        <constraint firstAttribute="trailing" secondItem="EFI-6u-XfM" secondAttribute="trailing" constant="20" id="V58-Ol-Edc"/>
+                        <constraint firstAttribute="trailing" secondItem="7MV-dA-H0c" secondAttribute="trailing" constant="20" id="Yt9-a8-IpC"/>
+                        <constraint firstAttribute="trailing" secondItem="rGC-ei-irI" secondAttribute="trailing" constant="27" id="i71-E6-KZC"/>
+                        <constraint firstItem="rGC-ei-irI" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="20" id="ieI-H7-Vcv"/>
+                        <constraint firstItem="Cmd-Sh-4Tz" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="57" id="oeH-iC-pkb"/>
+                        <constraint firstItem="Cmd-Sh-4Tz" firstAttribute="top" secondItem="EFI-6u-XfM" secondAttribute="bottom" constant="13" id="rHb-St-G1Y"/>
+                        <constraint firstAttribute="trailing" secondItem="Cmd-Sh-4Tz" secondAttribute="trailing" constant="57" id="uyt-K8-9E1"/>
+                        <constraint firstItem="EFI-6u-XfM" firstAttribute="top" secondItem="QMU-Yy-doi" secondAttribute="top" constant="60" id="wvG-Id-1ar"/>
+                        <constraint firstItem="7MV-dA-H0c" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="20" id="yI2-pd-34z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="QMU-Yy-doi" secondAttribute="bottom" id="1e4-oU-7Hg"/>
+                <constraint firstAttribute="trailing" secondItem="QMU-Yy-doi" secondAttribute="trailing" id="Csx-CG-iuy"/>
+                <constraint firstItem="QMU-Yy-doi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MXo-jH-jDS"/>
+                <constraint firstItem="QMU-Yy-doi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="RT7-Q7-0Bs"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

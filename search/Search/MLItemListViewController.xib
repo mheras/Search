@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLItemListViewController">
+            <connections>
+                <outlet property="tableView" destination="1YE-BY-j0Q" id="rMx-zA-YJa"/>
+                <outlet property="view" destination="dKH-BH-T5b" id="dyp-ug-HZm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dKH-BH-T5b">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-BY-j0Q">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1YE-BY-j0Q" firstAttribute="top" secondItem="dKH-BH-T5b" secondAttribute="top" id="6v4-xo-10G"/>
+                <constraint firstAttribute="bottom" secondItem="1YE-BY-j0Q" secondAttribute="bottom" id="B9s-Cf-U1q"/>
+                <constraint firstAttribute="trailing" secondItem="1YE-BY-j0Q" secondAttribute="trailing" id="OY9-OV-9J4"/>
+                <constraint firstItem="1YE-BY-j0Q" firstAttribute="leading" secondItem="dKH-BH-T5b" secondAttribute="leading" id="o3m-qe-Ran"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
