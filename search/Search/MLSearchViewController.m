@@ -122,7 +122,6 @@
 
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-#warning y no hay una manera mas eficiente?
     [self setCellContent:self.prototypeCell cellForRowAtIndexPath:indexPath];
     return [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
 }
@@ -155,7 +154,6 @@
     self.tableViewHistory.scrollEnabled=YES;
         NSDictionary* info = [aNotification userInfo];
         CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-#warning -55.0 deberia ser tableview bottom space to container
         UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height -55.0, 0.0);
         self.tableViewHistory.contentInset = contentInsets;
         self.tableViewHistory.scrollIndicatorInsets = contentInsets;

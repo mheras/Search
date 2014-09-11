@@ -119,7 +119,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-#warning y no hay una manera mas eficiente?
     [self setCellContent:self.prototypeCell cellForRowAtIndexPath:indexPath];
     return [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
 }
