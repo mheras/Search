@@ -69,6 +69,7 @@
 }
 
 -(void) cancelService{
+    [self.spinner stopAnimating];
     [self.imageService cancel];
 }
 
