@@ -49,7 +49,7 @@
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-53-92Q">
                             <rect key="frame" x="141" y="288" width="39" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="pageIndicatorTintColor" red="0.0034800282489999999" green="0.1134588997" blue="0.53889266300000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="pageIndicatorTintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </pageControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGC-ei-irI">
@@ -78,12 +78,13 @@
                     <constraints>
                         <constraint firstItem="rGC-ei-irI" firstAttribute="top" secondItem="Cmd-Sh-4Tz" secondAttribute="bottom" constant="13" id="0Vv-O0-N57"/>
                         <constraint firstItem="7MV-dA-H0c" firstAttribute="top" secondItem="rGC-ei-irI" secondAttribute="bottom" constant="20" id="5N2-PB-j3k"/>
+                        <constraint firstAttribute="trailing" secondItem="OI5-53-92Q" secondAttribute="trailing" constant="140" id="Dof-gw-NFb"/>
                         <constraint firstAttribute="bottom" secondItem="7MV-dA-H0c" secondAttribute="bottom" constant="155" id="Efu-jK-qkb"/>
-                        <constraint firstItem="OI5-53-92Q" firstAttribute="top" secondItem="Cmd-Sh-4Tz" secondAttribute="bottom" constant="-32" id="FBa-Ma-FLQ"/>
-                        <constraint firstItem="OI5-53-92Q" firstAttribute="leading" secondItem="Cmd-Sh-4Tz" secondAttribute="trailing" constant="-122" id="HV2-gr-76E"/>
                         <constraint firstItem="EFI-6u-XfM" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="20" id="KoS-rz-eiu"/>
+                        <constraint firstItem="OI5-53-92Q" firstAttribute="top" secondItem="Cmd-Sh-4Tz" secondAttribute="bottom" constant="-32" id="SEd-Co-nqs"/>
                         <constraint firstAttribute="trailing" secondItem="EFI-6u-XfM" secondAttribute="trailing" constant="20" id="V58-Ol-Edc"/>
                         <constraint firstAttribute="trailing" secondItem="7MV-dA-H0c" secondAttribute="trailing" constant="20" id="Yt9-a8-IpC"/>
+                        <constraint firstItem="OI5-53-92Q" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="141" id="gF1-jb-Fg2"/>
                         <constraint firstAttribute="trailing" secondItem="rGC-ei-irI" secondAttribute="trailing" constant="27" id="i71-E6-KZC"/>
                         <constraint firstItem="rGC-ei-irI" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="20" id="ieI-H7-Vcv"/>
                         <constraint firstItem="Cmd-Sh-4Tz" firstAttribute="leading" secondItem="QMU-Yy-doi" secondAttribute="leading" constant="57" id="oeH-iC-pkb"/>
