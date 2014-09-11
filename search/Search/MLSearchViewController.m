@@ -155,7 +155,7 @@
     self.tableViewHistory.scrollEnabled=YES;
         NSDictionary* info = [aNotification userInfo];
         CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-#warning -55.0 deberia ser tableview.bottomspace to container
+#warning -55.0 deberia ser tableview bottom space to container
         UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height -55.0, 0.0);
         self.tableViewHistory.contentInset = contentInsets;
         self.tableViewHistory.scrollIndicatorInsets = contentInsets;

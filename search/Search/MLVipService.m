@@ -41,11 +41,17 @@
 }
 -(void) connectionDidFinishLoading:(NSURLConnection *)aConnection {
     NSArray* items=[NSArray arrayWithObject:[self receivedItemsFromJSON:self.responseData]];
-    self.successBlock(items);
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+       self.successBlock(items);
+    });
 }
 
 -(void)connection:(NSURLConnection*) connection didFailWithError:(NSError *)error{
-    self.errorBlock(error);
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        self.errorBlock(error);
+    });
+    
 }
 
 #pragma mark item building

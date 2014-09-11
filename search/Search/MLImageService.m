@@ -41,7 +41,10 @@
     }else{
         UIImage* image=[self.daoManager getImageWithId:identification];
         NSArray * imageInArray= [NSArray arrayWithObject:image];
-        completionBlock(imageInArray);
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+           completionBlock(imageInArray);
+        });
+        
     }
 
 }
@@ -59,12 +62,18 @@
     UIImage* image= [UIImage imageWithData:self.responseData];
     NSArray * imageInArray= [NSArray arrayWithObject:image];
     [self.daoManager saveImage:image withId:self.identification];
-    self.successBlock(imageInArray);
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        self.successBlock(imageInArray);
+    });
+    
 
 }
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    self.errorBlock(error);
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+            self.errorBlock(error);
+    });
+
 }
 
 -(void)cancel{

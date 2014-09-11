@@ -65,7 +65,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self setTitle:@"Resultados"];
-    
+    self.tableView.tableFooterView = [[UIView alloc] init] ;
     [self showLoadingHud];
     
     [self.searchService startFetchingItemsWithInput:self.input andOffset:0 withCompletionBlock:^(NSArray * items) {
