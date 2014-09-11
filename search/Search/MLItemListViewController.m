@@ -131,6 +131,7 @@
 {
     ProductTableViewCell * productCell = [tableView dequeueReusableCellWithIdentifier:@"ProductCellIdentifier"];
     [self setCellContent:productCell cellForRowAtIndexPath:indexPath];
+    productCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return productCell;
 }
 

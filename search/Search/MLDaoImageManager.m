@@ -53,37 +53,6 @@
 }
 
 
-#pragma mark Load image 
-//-(void) loadImageWithUrl:(NSURL*) url thumbnail:(NSString*) thumbnail service:(MLThumbnailService*) thumbnailService andIdentifier:(NSString*)identifier inImage:(UIImage*) image{
-//    
-//    if([thumbnail isEqualToString:@"" ]){
-//        image= [UIImage imageNamed:@"noPicI.png"];
-//    }
-//    else{
-//        if([self isImageCachedWithId:identifier]){
-//            image=[self getThumbnailWithId:identifier];
-//        }else{
-//            //prevent displaying inconsistent data
-//            [thumbnailService cancel];
-//            // download the image asynchronously
-//            thumbnailService=[thumbnailService downloadImageWithURL:url andIdentification:identifier];
-//        }
-//    }
-//}
-#pragma mark MLThumbnailResponseDelegate methods
-
-//-(void) loadImageWithData:(NSData *)data andIdentifier:(NSString*)identifier onImage:(UIImage*)image{
-//    [self loadImage:[UIImage imageWithData:data]withIdentifier:identifier onImage:image];
-//}
-//-(void) loadImage:(UIImage*)thumbnail withIdentifier:(NSString*)identifier onImage:(UIImage*) image{
-//    image=thumbnail;
-//    // cache the image for use later (when scrolling up)
-//    [self saveThumbnail:thumbnail withId:identifier];
-//}
-//
-//-(void) noImageFoundOnImage:(UIImage*)image{
-//    image=[UIImage imageNamed:@"noPicI.png"];
-//}
 
 #pragma mark-support
 
