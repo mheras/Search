@@ -11,6 +11,7 @@
 #import "MLVipService.h"
 #import "MLSearchItem.h"
 #import "MLImageService.h"
+#import "MLLoginViewController.h"
 
 @interface MLItemDetailViewController ()<MLWebServiceDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
@@ -84,6 +85,9 @@
 
 
 - (IBAction)buyButtonPressed:(id)sender {
+    MLLoginViewController * loginController= [[MLLoginViewController alloc]init];
+    UINavigationController * navigationControllerLogin = [[UINavigationController alloc]initWithRootViewController: loginController];
+    [self presentViewController:navigationControllerLogin animated:YES completion:nil];
 }
 #pragma mark UICollectionView methods
 

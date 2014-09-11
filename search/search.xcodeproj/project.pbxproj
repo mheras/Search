@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0A1FBC19C1EED500B14E93 /* MLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A1FBA19C1EED500B14E93 /* MLLoginViewController.m */; };
+		4E0A1FBD19C1EED500B14E93 /* MLLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0A1FBB19C1EED500B14E93 /* MLLoginViewController.xib */; };
 		4E94B89919C0EC6C000E0ABF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B89819C0EC6C000E0ABF /* Foundation.framework */; };
 		4E94B89B19C0EC6C000E0ABF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B89A19C0EC6C000E0ABF /* CoreGraphics.framework */; };
 		4E94B89D19C0EC6C000E0ABF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B89C19C0EC6C000E0ABF /* UIKit.framework */; };
@@ -74,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E0A1FB919C1EED500B14E93 /* MLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLoginViewController.h; sourceTree = "<group>"; };
+		4E0A1FBA19C1EED500B14E93 /* MLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginViewController.m; sourceTree = "<group>"; };
+		4E0A1FBB19C1EED500B14E93 /* MLLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLLoginViewController.xib; sourceTree = "<group>"; };
 		4E94B89519C0EC6C000E0ABF /* Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E94B89819C0EC6C000E0ABF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E94B89A19C0EC6C000E0ABF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,6 +189,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0A1FB819C1EEA400B14E93 /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				4E0A1FB919C1EED500B14E93 /* MLLoginViewController.h */,
+				4E0A1FBA19C1EED500B14E93 /* MLLoginViewController.m */,
+				4E0A1FBB19C1EED500B14E93 /* MLLoginViewController.xib */,
+			);
+			name = "Log in";
+			sourceTree = "<group>";
+		};
 		4E94B88C19C0EC6C000E0ABF = {
 			isa = PBXGroup;
 			children = (
@@ -219,12 +234,13 @@
 			children = (
 				4E94B8D419C0ECBB000E0ABF /* MLAppDelegate.h */,
 				4E94B8D519C0ECBB000E0ABF /* MLAppDelegate.m */,
-				4E94B91E19C0ECF7000E0ABF /* Images */,
+				4E0A1FB819C1EEA400B14E93 /* Log in */,
 				4E94B8CA19C0EC91000E0ABF /* Bookmarks */,
 				4E94B8C919C0EC8B000E0ABF /* Search */,
 				4E94B8C819C0EC86000E0ABF /* Models */,
 				4E94B8C719C0EC7F000E0ABF /* Utilities */,
 				4E94B8AA19C0EC6C000E0ABF /* Images.xcassets */,
+				4E94B91E19C0ECF7000E0ABF /* Images */,
 				4E94B89F19C0EC6C000E0ABF /* Supporting Files */,
 			);
 			path = Search;
@@ -457,6 +473,7 @@
 				4E94B8F119C0ECD5000E0ABF /* MLItemDetailViewController.xib in Resources */,
 				4E94B8AB19C0EC6C000E0ABF /* Images.xcassets in Resources */,
 				4E94B92A19C0ED15000E0ABF /* noPicP.png in Resources */,
+				4E0A1FBD19C1EED500B14E93 /* MLLoginViewController.xib in Resources */,
 				4E94B8F319C0ECD5000E0ABF /* MLSearchViewController.xib in Resources */,
 				4E94B93319C0ED15000E0ABF /* mercadolibre.png in Resources */,
 			);
@@ -496,6 +513,7 @@
 				4E94B91319C0ECEA000E0ABF /* MLHistoryItem.m in Sources */,
 				4E94B8D119C0ECA7000E0ABF /* MBProgressHUD.m in Sources */,
 				4E94B91619C0ECEA000E0ABF /* MLSearchService.m in Sources */,
+				4E0A1FBC19C1EED500B14E93 /* MLLoginViewController.m in Sources */,
 				4E94B8D319C0ECA7000E0ABF /* MLKeyboardToolbar.m in Sources */,
 				4E94B8DA19C0ECC8000E0ABF /* MLFavouritesViewController.m in Sources */,
 				4E94B93C19C0ED39000E0ABF /* MLAbstractViewController.m in Sources */,
@@ -698,6 +716,7 @@
 				4E94B8C319C0EC6C000E0ABF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E94B8C419C0EC6C000E0ABF /* Build configuration list for PBXNativeTarget "SearchTests" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +725,7 @@
 				4E94B8C619C0EC6C000E0ABF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

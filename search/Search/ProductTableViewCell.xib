@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xj4-rv-HoR">
-                        <rect key="frame" x="0.0" y="0.0" width="71" height="71"/>
+                        <rect key="frame" x="5" y="0.0" width="71" height="71"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="YBq-jQ-f4b"/>
@@ -22,24 +22,24 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaF-DI-uI3" userLabel="Information View">
-                        <rect key="frame" x="71" y="0.0" width="263" height="71"/>
+                        <rect key="frame" x="76" y="0.0" width="258" height="71"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="pyo-UR-V9y">
-                                <rect key="frame" x="5" y="5" width="246" height="16"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="pyo-UR-V9y">
+                                <rect key="frame" x="5" y="5" width="241" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Cantidad vendida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1P-J6-Pud">
-                                <rect key="frame" x="5" y="24" width="205" height="27"/>
+                                <rect key="frame" x="5" y="24" width="200" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="$25.40" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-7Q-Zxi">
-                                <rect key="frame" x="5" y="50" width="214" height="18"/>
+                                <rect key="frame" x="5" y="50" width="209" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.45838994565217395" green="0.028621766716901552" blue="0.069048808742259785" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,7 +66,7 @@
                     <constraint firstItem="3U5-7Q-Zxi" firstAttribute="leading" secondItem="Xj4-rv-HoR" secondAttribute="trailing" constant="5" id="D4M-Lk-kUP"/>
                     <constraint firstItem="eaF-DI-uI3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EpE-Tz-skn"/>
                     <constraint firstAttribute="trailing" secondItem="eaF-DI-uI3" secondAttribute="trailing" id="aqo-w8-yDq"/>
-                    <constraint firstItem="Xj4-rv-HoR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="b0o-py-HMG"/>
+                    <constraint firstItem="Xj4-rv-HoR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="b0o-py-HMG"/>
                     <constraint firstItem="Xj4-rv-HoR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oLC-zH-Seh"/>
                     <constraint firstAttribute="bottom" secondItem="eaF-DI-uI3" secondAttribute="bottom" id="u67-qj-ZJs"/>
                 </constraints>
