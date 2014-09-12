@@ -8,7 +8,7 @@
 
 #import "MLSearchService.h"
 #import "MLItemBuilder.h"
-#define kOffsetIncrement 50
+static NSInteger const kOffsetIncrement=50;
 @interface MLSearchService()
 @property (nonatomic) NSInteger currentOffset;
 @property (nonatomic,copy) NSString* lastSearch;

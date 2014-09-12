@@ -16,14 +16,13 @@
 @interface MLItemDetailViewController ()<MLWebServiceDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
-- (IBAction)buyButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControlGallery;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewPhotoGallery;
-
 @property (nonatomic,strong) MLVipService * vipService;
 @property (nonatomic) int currentIndex;
 @property (nonatomic,strong) MLSearchItem* searchItem;
+- (IBAction)buyButtonPressed:(id)sender;
 @end
 
 @implementation MLItemDetailViewController
@@ -73,6 +72,7 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
     [self.vipService cancel];
 }
 

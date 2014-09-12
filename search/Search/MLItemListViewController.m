@@ -13,8 +13,8 @@
 #import "MLSearchService.h"
 #import "MLImageService.h"
 #import "MLDaoImageManager.h"
-#import "MLNoResultsViewController.h"
-#define kProductCellHeight 72
+#import "MLNoResultsView.h"
+static NSInteger const kProductCellHeight=72;
 
 @interface MLItemListViewController ()<MLSearchDelegate>
 
@@ -25,7 +25,7 @@
 @property (nonatomic,strong) MLSearchService* searchService;
 @property (nonatomic,strong) MLImageService* thumbnailService;
 @property (nonatomic,strong) NSOperationQueue* thumbnailDownloadQueue;
-@property (nonatomic,strong) ProductTableViewCell* prototypeCell;
+
 
 @property (nonatomic,copy) NSString * myString;
 
@@ -87,9 +87,10 @@
         }];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"ProductCellIdentifier"];
-    self.prototypeCell=[self.tableView dequeueReusableCellWithIdentifier:@"ProductCellIdentifier"];
+    
 }
 -(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
     [self.searchService cancel];
 }
 
@@ -105,9 +106,10 @@
 }
 
 -(void)didNotReceiveItems{
-    //Sets a noResultsView
-    MLNoResultsViewController * noResultsView = [[MLNoResultsViewController alloc]initWithNibName:nil bundle:nil];
-    [self.view addSubview:noResultsView.view];
+    UIView *noResultView = [[[NSBundle mainBundle] loadNibNamed:@"MLNoResultView" owner:self options:nil] objectAtIndex:0];
+    [self.tableView setTableFooterView:noResultView];
+    self.tableView.scrollEnabled = NO;
+    
 
 }
 
@@ -119,8 +121,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self setCellContent:self.prototypeCell cellForRowAtIndexPath:indexPath];
-    return [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
+    ProductTableViewCell* cell= [self.tableView dequeueReusableCellWithIdentifier:@"ProductCellIdentifier"];
+    [self setCellContent:cell cellForRowAtIndexPath:indexPath];
+    return [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{

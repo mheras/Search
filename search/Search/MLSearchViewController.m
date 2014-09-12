@@ -12,12 +12,11 @@
 #import "MLDaoHistoryManager.h"
 #import "MLKeyboardToolbar.h"
 
-#define kHistoryCellHeight 36;
+static NSInteger const kHistoryCellHeight=36;
 
 @interface MLSearchViewController ()
 //Search history
 @property (nonatomic,strong)NSMutableArray* history;
-@property (nonatomic,strong)MLHistoryTableViewCell* prototypeCell;
 @end
 
 @implementation MLSearchViewController
@@ -54,10 +53,8 @@
                                                                                  35.0f)];
     toolBar.okButton.action=@selector(doneEditing);
     self.searchBar.inputAccessoryView = toolBar;
-    
+    //Registrar la celda
     [self.tableViewHistory registerNib:[UINib nibWithNibName:@"MLHistoryTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchHistoryCellIdentifier"];
-    self.prototypeCell=[self.tableViewHistory dequeueReusableCellWithIdentifier:@"SearchHistoryCellIdentifier"];
-    
     
     [self setTitle:@"Buscar"];
 }
@@ -65,12 +62,13 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableViewHistory reloadData];
-    /*Alternativa de appending no para un reloadeo total*/
-    //    NSArray* indexPaths=[NSArray arrayWithObject:indexPath];
-    //    [self.tableViewHistory beginUpdates];
-    //    [self.tableViewHistory insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-    //    [self.tableViewHistory endUpdates];
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self deregisterForKeyboardNotifications];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -122,8 +120,9 @@
 
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self setCellContent:self.prototypeCell cellForRowAtIndexPath:indexPath];
-    return [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
+    MLHistoryTableViewCell* cell=[self.tableViewHistory dequeueReusableCellWithIdentifier:@"SearchHistoryCellIdentifier"];
+    [self setCellContent:cell cellForRowAtIndexPath:indexPath];
+    return [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize].height;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -146,6 +145,12 @@
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
     
+}
+
+- (void)deregisterForKeyboardNotifications {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [center removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
@@ -188,6 +193,10 @@
 }
 -(void) doneEditing{
     [self.searchBar resignFirstResponder];
+}
+
+- (void)dealloc {
+    [self deregisterForKeyboardNotifications];
 }
 
 @end

@@ -26,6 +26,7 @@
 }
 
 -(NSMutableArray*) getHistoryFromPath:(NSString*)path{
+#warning must be async
     NSMutableArray* history=[NSKeyedUnarchiver unarchiveObjectWithFile:path];
     return history;
 }

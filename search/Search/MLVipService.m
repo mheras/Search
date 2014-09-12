@@ -43,7 +43,7 @@
     NSArray* items=[NSArray arrayWithObject:[self receivedItemsFromJSON:self.responseData]];
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-       self.successBlock(items);
+        self.successBlock(items);
     });
 }
 

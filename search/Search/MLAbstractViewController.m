@@ -7,7 +7,7 @@
 //
 
 #import "MLAbstractViewController.h"
-#define kOffsetBlock 15
+static NSInteger const kOffsetBlock= 15;
 @interface MLAbstractViewController ()
 
 @end

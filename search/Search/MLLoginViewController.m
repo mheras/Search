@@ -8,7 +8,7 @@
 
 #import "MLLoginViewController.h"
 
-@interface MLLoginViewController ()
+@interface MLLoginViewController ()<UITextFieldDelegate>
 
 - (IBAction)loginButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUserName;
