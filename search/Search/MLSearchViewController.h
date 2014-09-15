@@ -11,6 +11,7 @@
 #import "MLHistoryItem.h"
 #import "NSDate+Utilities.h"
 #import "MLAbstractViewController.h"
+#import "MLDaoFilesystem.h"
 
 @interface MLSearchViewController :MLAbstractViewController<UITableViewDataSource, UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 

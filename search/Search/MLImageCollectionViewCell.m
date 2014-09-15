@@ -41,18 +41,19 @@
     [self setSpinnerCenteredInView:self.imageViewPhoto];
     [self.imageService cancel];
     self.imageService=[[MLImageService alloc]init];
+    __weak typeof(self) weakSelf = self;
     [self.imageService downloadImageWithURL:url andIdentification:imgId
                         withCompletionBlock:^(NSArray *items) {
-                            [self.spinner stopAnimating];
+                            [weakSelf.spinner stopAnimating];
                             UIImage * image= (UIImage*)[items objectAtIndex:0];
                             if (image==nil) {
-                                [self setImage:[UIImage imageNamed:@"noPicl.png" ]];
+                                [weakSelf setImage:[UIImage imageNamed:@"noPicl.png" ]];
                             }else{
-                                [self setImage:image];
+                                [weakSelf setImage:image];
                             }
                             
                         } errorBlock:^(NSError *err) {
-                            [self.spinner stopAnimating];
+                            [weakSelf.spinner stopAnimating];
                             
                         }];
 }

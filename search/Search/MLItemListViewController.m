@@ -13,7 +13,6 @@
 #import "MLSearchService.h"
 #import "MLImageService.h"
 #import "MLDaoImageManager.h"
-#import "MLNoResultsView.h"
 static NSInteger const kProductCellHeight=72;
 
 @interface MLItemListViewController ()<MLSearchDelegate>
@@ -61,9 +60,13 @@ static NSInteger const kProductCellHeight=72;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    if(![MLUtils isRunningIos7]){
+        [[UINavigationBar appearance]setTitleTextAttributes:
+        [NSDictionary dictionaryWithObjectsAndKeys:
+         [UIColor blackColor],
+         UITextAttributeTextColor,
+         nil]];
+    }
     [self setTitle:@"Resultados"];
     self.tableView.tableFooterView = [[UIView alloc] init] ;
     [self showLoadingHud];

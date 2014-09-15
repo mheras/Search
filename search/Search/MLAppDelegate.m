@@ -7,6 +7,7 @@
 //
 
 #import "MLAppDelegate.h"
+#import "MLUtils.h"
 
 @implementation MLAppDelegate
 
@@ -32,7 +33,14 @@
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor yellowColor]];
     // Dark appearence
     //tabBarController.tabBar.barTintColor = [self colorWith255Red:84 withGreen:84 withBlue:84];
-    tabBarController.tabBar.barTintColor=[UIColor blackColor];
+    
+    if([MLUtils isRunningIos7]){
+        tabBarController.tabBar.barTintColor=[UIColor blackColor];}
+    else{
+        #warning colorForIOS6
+        [[UITabBar appearance] setBackgroundColor:[UIColor blackColor]];
+        NSLog(@"Sarasa");
+    }
 
     navigationControllerSearch.tabBarItem=searchProductTabBarItem;
     navigationControllerFavourites.tabBarItem=favouritesProductsTabBarItem;

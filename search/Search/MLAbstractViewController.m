@@ -30,7 +30,15 @@ static NSInteger const kOffsetBlock= 15;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
+
+    if([MLUtils isRunningIos7]){
+        self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
+    }else{
+        #warning ios6Color
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
+    }
+    
     self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
@@ -58,5 +66,6 @@ static NSInteger const kOffsetBlock= 15;
 	self.progressHud.removeFromSuperViewOnHide = YES;
     
 }
+
 
 @end

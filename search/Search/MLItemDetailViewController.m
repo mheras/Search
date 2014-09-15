@@ -22,6 +22,11 @@
 @property (nonatomic,strong) MLVipService * vipService;
 @property (nonatomic) int currentIndex;
 @property (nonatomic,strong) MLSearchItem* searchItem;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelTopConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *buttonBuy;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonTrailingConstraint;
 - (IBAction)buyButtonPressed:(id)sender;
 @end
 
@@ -46,7 +51,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(![MLUtils isRunningIos7]){
+        self.topViewConstraint.constant=0.0;
+        self.labelTopConstraint.constant=0.0;
+        
 
+    }
     [self setupCollectionView];
     self.vipService.delegate=self;
     self.pageControlGallery.hidden = YES;

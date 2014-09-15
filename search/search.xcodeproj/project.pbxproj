@@ -10,6 +10,7 @@
 		4E0A1FBC19C1EED500B14E93 /* MLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A1FBA19C1EED500B14E93 /* MLLoginViewController.m */; };
 		4E0A1FBD19C1EED500B14E93 /* MLLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0A1FBB19C1EED500B14E93 /* MLLoginViewController.xib */; };
 		4E0A1FC819C344EE00B14E93 /* MLNoResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0A1FC719C344EE00B14E93 /* MLNoResultView.xib */; };
+		4E0A1FCB19C717BD00B14E93 /* MLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A1FCA19C717BD00B14E93 /* MLUtils.m */; };
 		4E94B89919C0EC6C000E0ABF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B89819C0EC6C000E0ABF /* Foundation.framework */; };
 		4E94B89B19C0EC6C000E0ABF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B89A19C0EC6C000E0ABF /* CoreGraphics.framework */; };
 		4E94B89D19C0EC6C000E0ABF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B89C19C0EC6C000E0ABF /* UIKit.framework */; };
@@ -68,6 +69,8 @@
 		4E0A1FBA19C1EED500B14E93 /* MLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginViewController.m; sourceTree = "<group>"; };
 		4E0A1FBB19C1EED500B14E93 /* MLLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLLoginViewController.xib; sourceTree = "<group>"; };
 		4E0A1FC719C344EE00B14E93 /* MLNoResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLNoResultView.xib; sourceTree = "<group>"; };
+		4E0A1FC919C717BD00B14E93 /* MLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLUtils.h; sourceTree = "<group>"; };
+		4E0A1FCA19C717BD00B14E93 /* MLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLUtils.m; sourceTree = "<group>"; };
 		4E94B89519C0EC6C000E0ABF /* Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E94B89819C0EC6C000E0ABF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E94B89A19C0EC6C000E0ABF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -261,6 +264,8 @@
 				4E94B8CE19C0ECA7000E0ABF /* NSDate+Utilities.m */,
 				4E94B8CF19C0ECA7000E0ABF /* MLKeyboardToolbar.h */,
 				4E94B8D019C0ECA7000E0ABF /* MLKeyboardToolbar.m */,
+				4E0A1FC919C717BD00B14E93 /* MLUtils.h */,
+				4E0A1FCA19C717BD00B14E93 /* MLUtils.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 				4E94B91619C0ECEA000E0ABF /* MLSearchService.m in Sources */,
 				4E0A1FBC19C1EED500B14E93 /* MLLoginViewController.m in Sources */,
 				4E94B8D319C0ECA7000E0ABF /* MLKeyboardToolbar.m in Sources */,
+				4E0A1FCB19C717BD00B14E93 /* MLUtils.m in Sources */,
 				4E94B8DA19C0ECC8000E0ABF /* MLFavouritesViewController.m in Sources */,
 				4E94B93C19C0ED39000E0ABF /* MLAbstractViewController.m in Sources */,
 				4E94B93819C0ED30000E0ABF /* ProductTableViewCell.m in Sources */,

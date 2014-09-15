@@ -17,6 +17,9 @@ static NSInteger const kHistoryCellHeight=36;
 @interface MLSearchViewController ()
 //Search history
 @property (nonatomic,strong)NSMutableArray* history;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *footerConstraint;
 @end
 
 @implementation MLSearchViewController
@@ -32,8 +35,12 @@ static NSInteger const kHistoryCellHeight=36;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableViewHistory.delegate = self;
-    self.tableViewHistory.dataSource = self;
+    if(![MLUtils isRunningIos7]){
+        self.topConstraint.constant=0.0;
+        self.topViewConstraint.constant=0.0;
+        self.footerConstraint.constant=0.0;
+        self.searchBar.tintColor = [UIColor blackColor];
+    }
     self.tableViewHistory.scrollEnabled=YES;
     self.searchBar.delegate=self;
     [self registerForKeyboardNotifications];

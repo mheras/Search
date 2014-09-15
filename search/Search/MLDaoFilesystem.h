@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@protocol MLHistoryDelegate <NSObject>
+-(NSMutableArray*) didFinishLoadingHistory:(NSMutableArray *)history;
+@end
 
 @interface MLDaoFilesystem : NSObject
+
 -(UIImage*) getImageWithId:(NSString*) identification andPath:(NSString*)path;
 -(BOOL)isImageCachedWithId:(NSString*) identification andPath:(NSString*)path;
 -(void)saveImage:(UIImage*)image withId:(NSString*)identification andPath:(NSString*)path;
