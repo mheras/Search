@@ -39,11 +39,11 @@
         self.identification=identification;
         self.connection=[NSURLConnection connectionWithRequest:request delegate:self];
     }else{
+        
         UIImage* image=[self.daoManager getImageWithId:identification];
         NSArray * imageInArray= [NSArray arrayWithObject:image];
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-           completionBlock(imageInArray);
-        });
+        completionBlock(imageInArray);
+
         
     }
 

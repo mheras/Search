@@ -32,7 +32,7 @@ static NSInteger const kProductCellHeight=72;
 
 @implementation MLItemListViewController
 
--(instancetype) init{
+-(id) init{
     
     if (self = [super init]){
         
@@ -43,7 +43,7 @@ static NSInteger const kProductCellHeight=72;
     return self;
 }
 
-- (instancetype)initWithInput:(NSString*)input
+- (id)initWithInput:(NSString*)input
 {
     self = [self init];
     if (self) {

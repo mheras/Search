@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "MLImageService.h"
+
 @interface MLDaoImageManager : NSObject
 + (id)sharedManager;
 -(void)saveImage:(UIImage*)image withId:(NSString*)identification;
 -(BOOL)isImageCachedWithId:(NSString*) identification;
 -(UIImage*) getImageWithId:(NSString*) identification;
+
 
 
 //New dao implementation

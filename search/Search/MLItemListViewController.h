@@ -10,5 +10,6 @@
 #import "MLAbstractViewController.h"
 @interface MLItemListViewController : MLAbstractViewController<UITableViewDataSource, UITableViewDelegate>
 
-- (instancetype)initWithInput:(NSString*)input;
+- (id)initWithInput:(NSString*)input;
+
 @end

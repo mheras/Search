@@ -37,6 +37,13 @@
 }
 -(NSMutableArray*) getHistory{
     return [self.daoFileSystem getHistoryFromPath:[[self getCacheFilePath]stringByAppendingString:@"history.dat"]];
+//    __block NSMutableArray* history;
+//    [self.daoFileSystem getHistoryFromPath:[[self getCacheFilePath]stringByAppendingString:@"history.dat"] completionBlock:^(NSMutableArray * hist) {
+//        history=hist;
+//    } errorBlock:^(NSMutableArray * hist) {
+//        history=hist;
+//    }];
+//    return history;
 }
 
 -(void)saveHistory:(NSMutableArray*) history {

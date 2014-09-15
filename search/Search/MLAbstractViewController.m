@@ -34,7 +34,6 @@ static NSInteger const kOffsetBlock= 15;
     if([MLUtils isRunningIos7]){
         self.navigationController.navigationBar.barTintColor=[UIColor blackColor];
     }else{
-        #warning ios6Color
         [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
         [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
     }

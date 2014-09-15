@@ -37,7 +37,6 @@
     if([MLUtils isRunningIos7]){
         tabBarController.tabBar.barTintColor=[UIColor blackColor];}
     else{
-        #warning colorForIOS6
         [[UITabBar appearance] setBackgroundColor:[UIColor blackColor]];
         NSLog(@"Sarasa");
     }
