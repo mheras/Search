@@ -11,7 +11,7 @@
 #import "MLDaoMemory.h"
 #import "MLImageService.h"
 
-@interface MLDaoImageManager()<MLDaoFilesystemDelegate>
+@interface MLDaoImageManager()
 
 @property (nonatomic) BOOL initializedFromCache;
 @property (nonatomic,strong) MLDaoMemory * daoMemory;
@@ -48,17 +48,11 @@
     return [self.daoFileSystem isImageCachedWithId:identification andPath:[[self getCacheFilePath]stringByAppendingString:identification]];
 }
 
--(UIImage*) getImageWithId:(NSString*) identification{
-    return [self.daoFileSystem getImageWithId:identification andPath:[[self getCacheFilePath]stringByAppendingString:identification]];
-}
-//
-//-(void)getImageWithId:(NSString*) identification completionBlock:(void (^)(NSMutableArray*)) completion errorBlock:(void (^)(NSMutableArray*)) error {
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [self.daoFileSystem getImageWithId:identification andPath:[[self getCacheFilePath]stringByAppendingString:identification]];
-//    }
-//}
--(UIImage*)didFinishUnarchivingImage:(UIImage *)image{
-    return image;
+-(void)getImageWithId:identification onCompletion:(void(^)(UIImage* image))completitionBlock{
+    [self.daoFileSystem getImageWithId:identification andPath:[[self getCacheFilePath]stringByAppendingString:identification] onCompletion:^(UIImage*image){
+        completitionBlock(image);
+    }];
+
 }
 
 #pragma mark-support

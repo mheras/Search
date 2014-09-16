@@ -13,7 +13,7 @@
 + (id)sharedManager;
 -(void)saveImage:(UIImage*)image withId:(NSString*)identification;
 -(BOOL)isImageCachedWithId:(NSString*) identification;
--(UIImage*) getImageWithId:(NSString*) identification;
+//-(UIImage*) getImageWithId:(NSString*) identification;
 
 
 
@@ -21,5 +21,5 @@
 //-(void) loadImageWithUrl:(NSURL*) url thumbnail:(NSString*) thumbnail service:(MLThumbnailService*) thumbnailService andIdentifier:(NSString*) identifier inImage:(UIImage*) image;
 //
 //-(MLThumbnailService*)downloadImageWithURL:(NSURL *)url image:(UIImage*) image andIdentification:(NSString*) identification;
-
+-(void)getImageWithId:identification onCompletion:(void(^)(UIImage* image))completitionBlock;
 @end

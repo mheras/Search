@@ -14,7 +14,6 @@
 @property (nonatomic,copy) NSString* identification;
 @property (nonatomic, strong) NSMutableData *responseData;
 @property (nonatomic,strong) MLDaoImageManager * daoManager;
-// @property (nonatomic,strong) UIImage* currentImage;
 @end
 
 @implementation MLImageService
@@ -35,18 +34,16 @@
     self.errorBlock=error;
     if(![self.daoManager isImageCachedWithId:identification]){
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
+        
         self.identification=identification;
         self.connection=[NSURLConnection connectionWithRequest:request delegate:self];
     }else{
-        
-        UIImage* image=[self.daoManager getImageWithId:identification];
-        NSArray * imageInArray= [NSArray arrayWithObject:image];
-        completionBlock(imageInArray);
-
-        
+        [self.daoManager getImageWithId:identification onCompletion:^(UIImage*image){
+            NSArray * imageInArray= [NSArray arrayWithObject:image];
+            completionBlock(imageInArray);
+        }];
     }
-
+    
 }
 #pragma mark - NSURLConnection delegate
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
@@ -58,7 +55,7 @@
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection{
-
+    
     UIImage* image= [UIImage imageWithData:self.responseData];
     NSArray * imageInArray= [NSArray arrayWithObject:image];
     [self.daoManager saveImage:image withId:self.identification];
@@ -66,14 +63,14 @@
         self.successBlock(imageInArray);
     });
     
-
+    
 }
 
 -(void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-            self.errorBlock(error);
+        self.errorBlock(error);
     });
-
+    
 }
 
 -(void)cancel{

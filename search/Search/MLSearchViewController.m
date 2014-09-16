@@ -20,6 +20,7 @@ static NSInteger const kHistoryCellHeight=36;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *footerConstraint;
+@property (nonatomic,strong) UIActivityIndicatorView* spinner;
 @end
 
 @implementation MLSearchViewController
@@ -49,11 +50,13 @@ static NSInteger const kHistoryCellHeight=36;
     UIImage* logoImage = [UIImage imageNamed:@"mercadolibre.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
     [self.searchBar setPlaceholder:@"Buscar en Mercadolibre"];
-    
-    if ([[MLDaoHistoryManager sharedManager] getHistory]!=nil) {
-        self.history=[[MLDaoHistoryManager sharedManager] getHistory];
-    }
-    
+    //history loading
+    [self setSpinnerCenteredInView:self.tableViewHistory];
+    [[MLDaoHistoryManager sharedManager]  getHistoryOnCompletion:^(NSMutableArray*array){
+        self.history=array;
+        [self.tableViewHistory reloadData];
+        [self.spinner stopAnimating];
+    }];
     MLKeyboardToolbar *toolBar = [[MLKeyboardToolbar alloc] initWithFrame:CGRectMake(0.0f,
                                                                                  0.0f,
                                                                                  self.view.window.frame.size.width,
@@ -201,7 +204,14 @@ static NSInteger const kHistoryCellHeight=36;
 -(void) doneEditing{
     [self.searchBar resignFirstResponder];
 }
-
+#pragma mark aux
+-(void) setSpinnerCenteredInView:(UIView*) containerView{
+    self.spinner=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.center = CGPointMake(containerView.frame.size.width/2,containerView.frame.size.height/2);
+    [containerView addSubview:self.spinner];
+    [self.spinner startAnimating];
+}
+#pragma mark dealloc
 - (void)dealloc {
     [self deregisterForKeyboardNotifications];
 }

@@ -35,17 +35,12 @@
     }
     return self;
 }
--(NSMutableArray*) getHistory{
-    return [self.daoFileSystem getHistoryFromPath:[[self getCacheFilePath]stringByAppendingString:@"history.dat"]];
-//    __block NSMutableArray* history;
-//    [self.daoFileSystem getHistoryFromPath:[[self getCacheFilePath]stringByAppendingString:@"history.dat"] completionBlock:^(NSMutableArray * hist) {
-//        history=hist;
-//    } errorBlock:^(NSMutableArray * hist) {
-//        history=hist;
-//    }];
-//    return history;
-}
 
+-(void)getHistoryOnCompletion:(void(^)(NSMutableArray* array))completitionBlock{
+    [self.daoFileSystem getHistoryFromPath:[[self getCacheFilePath]stringByAppendingString:@"history.dat"] onCompletion:^(NSMutableArray*array){
+        completitionBlock(array);
+    }];
+}
 -(void)saveHistory:(NSMutableArray*) history {
     [self.daoFileSystem saveHistory:history inPath:[[self getCacheFilePath]stringByAppendingString:@"history.dat"]];
 }

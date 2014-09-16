@@ -10,8 +10,8 @@
 
 @interface MLDaoHistoryManager : NSObject
 
--(NSMutableArray*) getHistory;
 + (id)sharedManager;
 -(void)saveHistory:(NSMutableArray*) history;
 -(void) deleteHistory;
+-(void)getHistoryOnCompletion:(void(^)(NSMutableArray* array))completitionBlock;
 @end
