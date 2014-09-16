@@ -14,14 +14,14 @@
 #import "MLLoginViewController.h"
 
 @interface MLItemDetailViewController ()<MLWebServiceDelegate>
+@property (nonatomic,strong) MLVipService * vipService;
+@property (nonatomic) int currentIndex;
+@property (nonatomic,strong) MLSearchItem* searchItem;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControlGallery;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewPhotoGallery;
-@property (nonatomic,strong) MLVipService * vipService;
-@property (nonatomic) int currentIndex;
-@property (nonatomic,strong) MLSearchItem* searchItem;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelTopConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBuy;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
