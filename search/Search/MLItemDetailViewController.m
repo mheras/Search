@@ -110,6 +110,7 @@
     [flowLayout setMinimumLineSpacing:0.0f];
     [self.collectionViewPhotoGallery setPagingEnabled:YES];
     [self.collectionViewPhotoGallery setCollectionViewLayout:flowLayout];
+
 }
 
 

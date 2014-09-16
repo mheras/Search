@@ -23,9 +23,6 @@ static NSInteger const kProductCellHeight=72;
 @property (nonatomic,strong) ProductTableViewCell* lastVisibleCell;
 @property (nonatomic,strong) MLSearchService* searchService;
 @property (nonatomic,strong) MLImageService* thumbnailService;
-@property (nonatomic,strong) NSOperationQueue* thumbnailDownloadQueue;
-
-
 @property (nonatomic,copy) NSString * myString;
 
 @end
@@ -67,10 +64,11 @@ static NSInteger const kProductCellHeight=72;
          UITextAttributeTextColor,
          nil]];
     }
+
+    
     [self setTitle:@"Resultados"];
     self.tableView.tableFooterView = [[UIView alloc] init] ;
     [self showLoadingHud];
-    
     [self.searchService startFetchingItemsWithInput:self.input andOffset:0 withCompletionBlock:^(NSArray * items) {
             [self removeLoadingHud];
             if (self.items == nil){

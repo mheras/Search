@@ -24,8 +24,6 @@
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
     NSArray *results = [parsedObject valueForKey:@"results"];
-    NSLog(@"Count %d", results.count);
-    
     for (NSDictionary *itemDic in results) {
         MLSearchItem *item = [[MLSearchItem alloc] init];
         

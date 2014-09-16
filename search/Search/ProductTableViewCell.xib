@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -17,29 +18,28 @@
                         <rect key="frame" x="5" y="0.0" width="71" height="71"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="71" id="YBq-jQ-f4b"/>
-                            <constraint firstAttribute="height" constant="71" id="aZf-bE-WDE"/>
+                            <constraint firstAttribute="width" constant="71" id="fpz-aF-Zxt"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaF-DI-uI3" userLabel="Information View">
                         <rect key="frame" x="76" y="0.0" width="258" height="71"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="pyo-UR-V9y">
-                                <rect key="frame" x="5" y="5" width="241" height="16"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="pyo-UR-V9y">
+                                <rect key="frame" x="5" y="5" width="248" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Cantidad vendida" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1P-J6-Pud">
-                                <rect key="frame" x="5" y="24" width="200" height="27"/>
+                                <rect key="frame" x="5" y="24" width="248" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="$25.40" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-7Q-Zxi">
-                                <rect key="frame" x="5" y="50" width="209" height="18"/>
+                                <rect key="frame" x="5" y="50" width="248" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.45838994565217395" green="0.028621766716901552" blue="0.069048808742259785" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,12 +50,12 @@
                         <constraints>
                             <constraint firstItem="pyo-UR-V9y" firstAttribute="top" secondItem="eaF-DI-uI3" secondAttribute="top" constant="5" id="1Xo-4m-T4y"/>
                             <constraint firstItem="pyo-UR-V9y" firstAttribute="leading" secondItem="eaF-DI-uI3" secondAttribute="leading" constant="5" id="25o-CY-odh"/>
-                            <constraint firstAttribute="trailing" secondItem="3U5-7Q-Zxi" secondAttribute="trailing" constant="44" id="GDw-fB-u7t"/>
+                            <constraint firstAttribute="trailing" secondItem="3U5-7Q-Zxi" secondAttribute="trailing" constant="5" id="GDw-fB-u7t"/>
                             <constraint firstAttribute="bottom" secondItem="3U5-7Q-Zxi" secondAttribute="bottom" constant="3" id="RLY-Oj-Y4J"/>
                             <constraint firstItem="X1P-J6-Pud" firstAttribute="top" secondItem="pyo-UR-V9y" secondAttribute="bottom" constant="3" id="VQ8-t4-SUd"/>
-                            <constraint firstAttribute="trailing" secondItem="X1P-J6-Pud" secondAttribute="trailing" constant="53" id="axl-49-qBx"/>
-                            <constraint firstItem="3U5-7Q-Zxi" firstAttribute="top" secondItem="X1P-J6-Pud" secondAttribute="bottom" constant="-1" id="egk-WX-hcN"/>
-                            <constraint firstAttribute="trailing" secondItem="pyo-UR-V9y" secondAttribute="trailing" constant="12" id="qoK-Ij-AXj"/>
+                            <constraint firstAttribute="trailing" secondItem="X1P-J6-Pud" secondAttribute="trailing" constant="5" id="axl-49-qBx"/>
+                            <constraint firstItem="3U5-7Q-Zxi" firstAttribute="top" secondItem="X1P-J6-Pud" secondAttribute="bottom" id="egk-WX-hcN"/>
+                            <constraint firstAttribute="trailing" secondItem="pyo-UR-V9y" secondAttribute="trailing" constant="5" id="qoK-Ij-AXj"/>
                             <constraint firstItem="X1P-J6-Pud" firstAttribute="leading" secondItem="eaF-DI-uI3" secondAttribute="leading" constant="5" id="zdE-GE-nOL"/>
                         </constraints>
                     </view>

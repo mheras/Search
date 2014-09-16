@@ -38,7 +38,6 @@
         tabBarController.tabBar.barTintColor=[UIColor blackColor];}
     else{
         [[UITabBar appearance] setBackgroundColor:[UIColor blackColor]];
-        NSLog(@"Sarasa");
     }
 
     navigationControllerSearch.tabBarItem=searchProductTabBarItem;
